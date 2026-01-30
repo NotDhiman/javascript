@@ -18,7 +18,7 @@ console.log("secondline")
 // },3000)
 // It is a one time function. It executes only once after the specified time interval.
 const intervalId = setInterval(()=>{
-    console.log("This message is displayed every 2 seconds")
+    console.log("This message is displayed every 1 seconds")
 },1000)
 // It is a repeated function. It executes repeatedly at the specified time interval.
 // to stop the setInterval function, we can use clearInterval method
@@ -28,3 +28,10 @@ setTimeout(()=>{
     console.log("Interval cleared after 10 seconds")
 },10000)    
 // clearInterval is used to stop the setInterval function from executing further
+let count=1
+const intervalId2=setInterval(()=>{
+    console.log(count++)
+    if(count>10){
+        clearInterval(intervalId2)
+        console.log("Count reached 10, interval cleared")
+    }},1000)
