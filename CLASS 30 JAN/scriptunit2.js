@@ -91,3 +91,23 @@
             goPlayground();
         })                      
      });
+    //  creating and removing elements
+    const input=document.querySelector("#task")
+    const button=document.querySelector("#btn")
+    const list=document.querySelector(".list")
+    button.addEventListener("click",(e)=>{
+        e.preventDefault() // to prevent form submission
+        if(input.value===""){
+            alert("Please enter a task")
+            return
+        }
+        const li=document.createElement("li")
+         const deleteButton=document.createElement("button")
+        deleteButton.innerText="Delete"
+        li.innerText=input.value
+        li.appendChild(deleteButton)
+        list.appendChild(li)
+        deleteButton.addEventListener("click",()=>{
+            list.removeChild(li)
+        })
+        input.value="" })// to clear the input field after adding the task    
